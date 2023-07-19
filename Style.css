@@ -29,7 +29,7 @@ body {
   #idArtigo {
     width: 80%;
     float: right;
-    height: 78%;
+    height: 80%;
   }
   
   #idNav {
@@ -57,21 +57,4 @@ body {
     float: right;
   }
   
-  label {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  input[type="submit"] {
-    margin-top: 10px;
-  }
-  
-  select,
-  input[type="date"],
-  input[type="time"] {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
+ 
