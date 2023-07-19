@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle automatico de lampada</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <section class="header">
+
+        <header id="idTitulo">
+            <img class="img-fluid" style="width: 150px; position: absolute;" src="tmeeducation-logo.d6f6a1fb.png"
+                alt="Logo TME Education">
+            <div class="titulo">
+                <h1>TME Education</h1>
+                <h2 style="margin-top: -20px;">Universidade Eduardo Mondlane</h2>
+                <h3 style="margin-top: -20px;">Workshop de IoT com Arduino </h3>
+            </div>
+        </header>
+
+        <section class="Conteudo">
+            <div class="subtitulo">
+                <h3>Outros projectos</h3>
+                <nav id="idNav">
+                    <p><a href="">Automação de casa</a></p>
+                    <p><a href="">Irrigação do solo</a></p>
+                    <p><a href="">Robotica Arduino</a></p>
+                </nav>
+            </div>
+
+            <article id="idArtigo">
+                <div class="container">
+                    <h1>Projecto de Controle Remoto de Iluminação de Led</h1>
+
+                    <section>
+                        <img id="imgDesligar" src="desligar.jpg" alt="" style="width: 180px; height: 180px;" onclick="DesligarImg()">
+                        <img id="imgLigar" src="ligar.jpg" alt="" style="width: 150px; height: 180px;" onclick="EstadoLampada()">
+
+                        <div class="Leds">
+                            <button class="led-off" onclick="ledOff()">Desligar</button>
+                            <button class="led-on" onclick="ledOn()">Ligar</button>
+                        </div>
+                        <br><Label id="estado"></Label><Label id="situacaoEstado"></Label>
+                    </section>
+                </div>
+            </article>
+
+            <footer id="idFooter">
+                    <b>Omar Davide Xavier</b>, estudante da faculdade de engenharia, UEM é o criador deste interessante projeto de controle de iluminação de LED. Através
+                    de uma página web interativa, é possível selecionar uma imagem/botão ou um LED específico para ligar ou
+                    desligar a lâmpada correspondente. Com uma abordagem intuitiva e fácil de usar, esse sistema permite
+                    controlar a iluminação de forma personalizada e eficiente. Uma solução inovadora que combina
+                    tecnologia e praticidade para criar uma experiência única de controle de iluminação. <strong> TME Education Mozambique </strong><br><p><b>Contacto: +(258)843801472/ +(258)873801473 ||Email: omardavidexavier@gmail.com ||Facebook ....|| Instagram...|| Linkedln...</b></p>
+                </p>
+            </footer>
+        </section>
+        
+
+        <script>
+            const firebaseConfig = {
+              apiKey: "AIzaSyC3CUfLtqfoeQW4a-Hk1vansygjvnHW7ZM",
+              authDomain: "iot-hello-world-95dba.firebaseapp.com",
+              projectId: "iot-hello-world-95dba",
+              storageBucket: "iot-hello-world-95dba.appspot.com",
+              messagingSenderId: "58987785545",
+              appId: "1:58987785545:web:e6ab4d32eef9939e74be98"
+            };
+            firebase.initializeApp(firebaseConfig);
+          
+            function ledOn() {
+              firebase.database().ref("SALA").set({
+                estado: "LIGADA"
+              });
+            }
+          
+            function ledOff() {
+              firebase.database().ref("SALA").set({
+                estado: "DESLIGADA"
+              });
+            }
+          </script>
+          <script src="app.js" defer></script>
+          
+       
+</body>
+
+</html>
